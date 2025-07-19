@@ -421,6 +421,16 @@ class SeyahatAcentesiMarketplace {
 // Initialize the plugin
 new SeyahatAcentesiMarketplace();
 
+// Include WooCommerce integration
+if (file_exists(SAM_PLUGIN_PATH . 'includes/woocommerce-integration.php')) {
+    require_once SAM_PLUGIN_PATH . 'includes/woocommerce-integration.php';
+}
+
+// Include sample data installer
+if (file_exists(SAM_PLUGIN_PATH . 'includes/sample-data.php')) {
+    require_once SAM_PLUGIN_PATH . 'includes/sample-data.php';
+}
+
 // Helper functions
 function sam_get_partner_applications($status = 'all') {
     global $wpdb;
